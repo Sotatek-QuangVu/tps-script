@@ -6,8 +6,10 @@ const BOB = '5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty';
 const blockTime = 6
 
 async function main () {
-  const provider = new WsProvider('ws://127.0.0.1:9944');
-  const api = await ApiPromise.create(provider);
+  const provider = new WsProvider('ws://127.0.0.1:9955');
+  const api = await ApiPromise.create({
+    provider
+  });
 
   const keyring = new Keyring({ type: 'sr25519' });
   const alice = keyring.addFromUri('//Alice');
